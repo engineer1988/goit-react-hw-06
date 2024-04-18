@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
 import Contact from "../contact/Contact";
 import css from "./ContactList.module.css";
+import { useSelector } from "react-redux";
+import { selectNameFilter } from "../../redux/filtersSlice";
 
-const ContactList = ({ dataContacts, onDeleteContact }) => {
+const ContactList = () => {
+  const dataContacts = useSelector(selectNameFilter);
   return (
     <ul className={css.contact_items}>
       {dataContacts.map((contact) => {
@@ -12,7 +15,7 @@ const ContactList = ({ dataContacts, onDeleteContact }) => {
               id={contact.id}
               name={contact.name}
               number={contact.number}
-              onDeleteContact={onDeleteContact}
+              // onDeleteContact={onDeleteContact}
             />
           </li>
         );
