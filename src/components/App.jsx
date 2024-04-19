@@ -1,7 +1,7 @@
 // import { useState, useEffect } from "react";
 import "./App.css";
 import ContactForm from "./contact-form/ContactForm";
-// import SearchBox from "./search-box/SearchBox";
+import SearchBox from "./search-box/SearchBox";
 import ContactList from "./contact-list/ContactList";
 
 function App() {
@@ -47,7 +47,7 @@ function App() {
     <div>
       <h1>Phonebook</h1>
       <ContactForm />
-      {/* <SearchBox /> */}
+      <SearchBox />
       <ContactList />
     </div>
   );

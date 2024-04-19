@@ -30,13 +30,14 @@
 import css from "./SearchBox.module.css";
 import { useDispatch } from "react-redux";
 import { changeFilter } from "../../redux/filtersSlice";
-import { selectNameFilter } from "../../redux/filtersSlice";
+// import { selectNameFilter } from "../../redux/filtersSlice";
 
 const SearchBox = () => {
   const dispatch = useDispatch();
 
   const handleChange = (evt) => {
     dispatch(changeFilter(evt.target.value));
+    // console.log(evt.target.value);
   };
 
   return (
@@ -44,7 +45,7 @@ const SearchBox = () => {
       <p>Find contacts by name</p>
       <input
         type="text"
-        value={selectNameFilter}
+        // value={""}
         onChange={handleChange}
         className={css.search_box_field}
       />
