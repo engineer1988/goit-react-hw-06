@@ -85,7 +85,6 @@
 import css from "./ContactForm.module.css";
 import { Formik, Form, Field } from "formik";
 import { useId } from "react";
-// import { nanoid } from "nanoid";
 import * as Yup from "yup";
 import { ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
@@ -103,22 +102,12 @@ const ContactFormSchema = Yup.object().shape({
 });
 
 const ContactForm = () => {
-  // const tasks = useSelector(getTasks);
   const dispatch = useDispatch();
   const nameFieldId = useId();
   const numberFieldId = useId();
 
   const handleSubmit = (values, actions) => {
-    // addContact({
-    //   name: values.name,
-    //   number: values.number,
-    // });
-    dispatch(
-      addContact({
-        name: values.name,
-        number: values.number,
-      })
-    );
+    dispatch(addContact(values.name, values.number));
     actions.resetForm();
   };
   return (
@@ -168,7 +157,4 @@ const ContactForm = () => {
     </Formik>
   );
 };
-// ContactForm.propTypes = {
-//   onAdd: PropTypes.func,
-// };
 export default ContactForm;

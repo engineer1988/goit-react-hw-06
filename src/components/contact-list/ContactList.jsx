@@ -2,10 +2,11 @@ import PropTypes from "prop-types";
 import Contact from "../contact/Contact";
 import css from "./ContactList.module.css";
 import { useSelector } from "react-redux";
-import { selectNameFilter } from "../../redux/filtersSlice";
+import { selectContacts } from "../../redux/contactsSlice";
 
 const ContactList = () => {
-  const dataContacts = useSelector(selectNameFilter);
+  const dataContacts = useSelector(selectContacts);
+  console.log(dataContacts);
   return (
     <ul className={css.contact_items}>
       {dataContacts.map((contact) => {
