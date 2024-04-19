@@ -39,7 +39,6 @@ Contact.propTypes = {
   name: PropTypes.string,
   number: PropTypes.string,
   id: PropTypes.string,
-  onDeleteContact: PropTypes.func,
 };
 
 export default Contact;
